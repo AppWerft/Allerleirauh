@@ -1,0 +1,8 @@
+"/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/android/gen/android/support/v7/appcompat/R.java"
+"/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/android/gen/de/appwerft/frontlineshop/ApplicationStylesheet.java"
+"/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/android/gen/de/appwerft/frontlineshop/AssetCryptImpl.java"
+"/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/android/gen/de/appwerft/frontlineshop/FrontlineshopActivity.java"
+"/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/android/gen/de/appwerft/frontlineshop/FrontlineshopAppInfo.java"
+"/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/android/gen/de/appwerft/frontlineshop/FrontlineshopApplication.java"
+"/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/android/gen/de/appwerft/frontlineshop/R.java"
+"/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/android/gen/ti/modules/titanium/ui/R.java"

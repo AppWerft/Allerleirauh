@@ -1,0 +1,5 @@
+// this is a generated file - DO NOT EDIT
+
+ORG_BCBHH_IOSFLIPVIEW_OTHER_LDFLAGS=$(inherited) -framework QuartzCore -framework UIKit -framework CoreGraphics
+DK_NAPP_SOCIAL_OTHER_LDFLAGS=$(inherited) -weak_framework Social -weak_framework Accounts
+OTHER_LDFLAGS=$(inherited) $(ORG_BCBHH_IOSFLIPVIEW_OTHER_LDFLAGS) $(DK_NAPP_SOCIAL_OTHER_LDFLAGS) 

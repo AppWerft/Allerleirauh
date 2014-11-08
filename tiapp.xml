@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>de.appwerft.frontlineshop</id>
+    <name>Frontlineshop</name>
+    <version>1.0</version>
+    <publisher>rainerschleevoigt</publisher>
+    <url>http://</url>
+    <description>undefined</description>
+    <copyright>2014 by rainerschleevoigt</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>true</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
+    <analytics>false</analytics>
+    <guid>5634ebc9-8b13-4d27-b77d-f84160ca2e61</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <tool-api-level>14</tool-api-level>
+        <!--http://jgilfelt.github.io/android-actionbarstylegenerator/#name=Radio2go&compat=holo&theme=light&actionbarstyle=solid&texture=1&hairline=1&neutralPressed=0&backColor=c00%2C100&secondaryColor=e4a261%2C100&tabColor=d6d6d6%2C100&tertiaryColor=f80%2C100&accentColor=f44%2C100&cabBackColor=f44%2C100&cabHighlightColor=fb3%2C100 -->
+        <manifest android:versionCode="1" android:versionName="1.0.1">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <application android:theme="@style/Theme.Frontlineshop">
+                <activity android:configChanges="keyboardHidden"
+                    android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="sensorPortait"/>
+                <activity android:configChanges="keyboardHidden"
+                    android:label=""
+                    android:name="ti.modules.titanium.ui.TiTabActivity" android:screenOrientation="sensorPortait"/>
+            </application>
+            <uses-sdk android:minSdkVersion="14"/>
+            <uses-sdk android:targetSdkVersion="14"/>
+        </manifest>
+    </android>
+    <modules>
+        <module platform="iphone">org.bcbhh.iosflipview</module>
+        <module platform="android">com.alcoapps.actionbarextras</module>
+        <module platform="android">bencoding.blur</module>
+        <module platform="android">yy.tidialogs</module>
+        <module platform="iphone">dk.napp.social</module>
+    </modules>
+    <deployment-targets>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+        <target device="ipad">false</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">false</target>
+    </deployment-targets>
+    <sdk-version>3.4.0.GA</sdk-version>
+</ti:app>

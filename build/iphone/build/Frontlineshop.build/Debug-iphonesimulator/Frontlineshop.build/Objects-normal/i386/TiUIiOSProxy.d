@@ -1,0 +1,60 @@
+dependencies: \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSProxy.m \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiBase.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiThreading.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiPublicAPI.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiEvaluator.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/KrollContext.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/headers/TiCore/TiCore.h \
+  headers/TiCore/Ti.h headers/TiCore/TiBase.h \
+  headers/TiCore/TiContextRef.h headers/TiCore/TiObjectRef.h \
+  headers/TiCore/TiValueRef.h headers/TiCore/WebKitAvailability.h \
+  headers/TiCore/TiStringRef.h headers/TiCore/TiStringRefCF.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/headers/TiCore/TiContextRefPrivate.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/KrollCallback.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/KrollObject.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiBindingRunLoop.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSAdViewProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIViewProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiViewProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIView.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiAnimation.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiPoint.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiDimension.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiColor.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/ListenerEntry.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiModule.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUtils.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/WebFont.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiFile.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiBuffer.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiBlob.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/LayoutConstraint.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiGradient.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiRect.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiViewTemplate.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/Webcolor.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSTransitionAnimationProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSAttributedStringProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/Ti3DMatrix.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSCoverFlowViewProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSToolbarProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiToolbar.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSTabbedBarProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSDocumentViewerProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiUIiOSNavWindowProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiWindowProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiTab.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiTabGroup.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiViewController.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiControllerProtocols.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiAnimatorProxy.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiSnapBehavior.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiPushBehavior.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiGravityBehavior.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiAnchorAttachBehavior.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiViewAttachBehavior.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiCollisionBehavior.h \
+  /Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/build/iphone/Classes/TiDynamicItemBehavior.h
