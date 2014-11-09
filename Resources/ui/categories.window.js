@@ -45,7 +45,7 @@ Module = function(title, catalogtree, genderage) {
 				fontFamily : 'Georgia'
 			}
 		}));
-		row.add(Ti.UI.createImageView({
+		var thumbnail = Ti.UI.createImageView({
 			image : 'https:' + category.thumbnail,
 			left : 0,
 			top : 0,
@@ -53,7 +53,12 @@ Module = function(title, catalogtree, genderage) {
 			bottom : 2,
 			width : 80,
 			height : 100
-		}));
+		});
+		row.add(thumbnail);
+		require('vendor/cachedimage')({
+			url : 'https:' + category.thumbnail,
+			view : thumbnail
+		});
 		rows.push(row);
 	});
 	container.setData(rows);
@@ -65,7 +70,6 @@ Module = function(title, catalogtree, genderage) {
 		else
 			self.tab.open(win);
 	});
-	
 
 	return self;
 };

@@ -155,8 +155,9 @@ Module = function(title, urlKey, genderage) {
 						fontFamily : 'Georgia'
 					}
 				}));
+				
 				row.add(Ti.UI.createImageView({
-					image : 'https:' + subcategory.thumbnail,
+					image : 'https:' + subcategory.thumbnail.replace('small2', 'large').replace('small1', 'large'),
 					left : 0,
 					top : 5,
 					bottom : 5,

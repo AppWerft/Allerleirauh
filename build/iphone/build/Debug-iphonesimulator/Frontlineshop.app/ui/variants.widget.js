@@ -1,0 +1,1 @@
+/Users/rainerschleevoigt/Documents/TitaniumStudioWorkspace/Frontlineshop/Resources/iphone/ui/variants.widget.js

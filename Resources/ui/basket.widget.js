@@ -13,22 +13,20 @@ Module = function() {
 			fullscreen : true,
 		});
 		var container = Ti.UI.createTableView({
-			bottom : 50
+			bottom : 0
 		});
 		var rows = [];
 		self.add(container);
 		basket.forEach(function(item) {
-			rows.push(require('ui/basket.row')(item));
+			rows.push(require('ui/basket.row')(container,item));
 		});
 		container.setData(rows);
-		container.addEventListener('longpress', function(_e) {
-			alert('Mächtest Du „' + basket[_e.index].name + '“ wirklich aus dem Warenkorb entfernen?');
+		/*container.addEventListener('swipe', function(_e) {
+			console.log(_e.index);
+			_e.row.setLeft(60);
 
-		});
+		});*/
 		if (Ti.Android) {
-			Ti.UI.createNotification({
-				message : 'Mit langem Drücken kansnt Du den Warenkorb bearbeiten'
-			}).show();
 			self.addEventListener("open", function() {
 				var activity = self.getActivity();
 				if (activity && activity.actionBar) {
@@ -46,6 +44,20 @@ Module = function() {
 							icon : Ti.App.Android.R.drawable.ic_action_trash
 						}).addEventListener("click", function() {
 
+							var dialog = Ti.UI.createAlertDialog({
+								cancel : 1,
+								buttonNames : ['OK', 'Abbruch, weiterkaufen'],
+								message : 'Möchtest Du jetzt unwiederbringlich deinen Warenkorb löschen? Das gefällt uns gar nicht.',
+								title : 'Warenkorbabbruch'
+							});
+							dialog.addEventListener('click', function(e) {
+								if (e.index != e.source.cancel) {
+									Basket.removeAllArticles();
+									self.close();
+								}
+							});
+							dialog.show();
+
 						});
 						e.menu.add({
 							title : 'Kasse',
@@ -58,7 +70,7 @@ Module = function() {
 				}
 			});
 		};
-
+		
 		self.open();
 
 	}

@@ -39,7 +39,6 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <tool-api-level>14</tool-api-level>
         <!--http://jgilfelt.github.io/android-actionbarstylegenerator/#name=Radio2go&compat=holo&theme=light&actionbarstyle=solid&texture=1&hairline=1&neutralPressed=0&backColor=c00%2C100&secondaryColor=e4a261%2C100&tabColor=d6d6d6%2C100&tertiaryColor=f80%2C100&accentColor=f44%2C100&cabBackColor=f44%2C100&cabHighlightColor=fb3%2C100 -->
         <manifest android:versionCode="1" android:versionName="1.0.1">
             <uses-permission android:name="android.permission.INTERNET"/>
@@ -51,8 +50,8 @@
                     android:label=""
                     android:name="ti.modules.titanium.ui.TiTabActivity" android:screenOrientation="sensorPortait"/>
             </application>
-            <uses-sdk android:minSdkVersion="14"/>
-            <uses-sdk android:targetSdkVersion="14"/>
+            <uses-sdk android:maxSdkVersion="20"
+                android:minSdkVersion="10" android:targetSdkVersion="14"/>
         </manifest>
     </android>
     <modules>
@@ -61,6 +60,7 @@
         <module platform="android">bencoding.blur</module>
         <module platform="android">yy.tidialogs</module>
         <module platform="iphone">dk.napp.social</module>
+        <module platform="android">com.gbaldera.titouchgallery</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

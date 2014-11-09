@@ -6,10 +6,11 @@ var Module = function() {
 };
 
 Module.prototype = {
-	addArticle : function(id) {
+	addArticle : function(product) {
 		var list = Ti.App.Properties.getList('MYBASKET');
+		Ti.App.Properties.setString('product_'+product.productNumber,JSON.stringify(product));
 		list.unshift({
-			id : id
+			id : product.productNumber
 		});
 		Ti.App.Properties.setList('MYBASKET', list);
 		return this.getAllArticles();

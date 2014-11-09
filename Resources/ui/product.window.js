@@ -1,63 +1,49 @@
-if (Ti.Android)
+if (Ti.Android) {
 	var abx = require('com.alcoapps.actionbarextras');
+	var TouchGallery = require("com.gbaldera.titouchgallery");
+}
 
-var getProduct = function(id, callback) {
-	if (Ti.App.Properties.hasProperty('product_' + id)) {
-		console.log('Info: product is in cache ' + id);
-		try {
-			setTimeout(function() {
-				callback(JSON.parse(Ti.App.Properties.getString('product_' + id)));
-			}, 700);
-			return;
-		} catch(E) {
-			console.log('Warning: cannot parse prop ' + 'product_' + id);
-		}
-		return;
-	}
-	var url = 'https://www.frontlineshop.com/api/product/' + id;
-	var xhr = Ti.Network.createHTTPClient({
-		onload : function() {
-			var res = JSON.parse(this.responseText).response;
-			Ti.App.Properties.setString('product_' + id, JSON.stringify(res));
-			callback(res);
-		},
-		onerror : function() {
-			alert('No internet – no fun!');
-			callback(null);
-		}
-	});
-	xhr.open('GET', url, true);
-	xhr.send(null);
-};
-
-/*     */
 Module = function(options) {
-	var product;
+	var product,
+	    actionbar;
 	var self = Ti.UI.createWindow({
 		fullscreen : true,
 		title : options.name,
 		backgroundImage : '/assets/default.png'
 	});
+	console.log('Info: window started');
 	function updateGallery(images) {
-		self.gallery.animate({
-			opacity : 0,
-			duration : 100
-		}, function() {
-			self.gallery.getChildren().forEach(function(child) {
-				self.gallery.remove(child);
-			});
+		if (Ti.Android) {
+			self.gallery.images = [];
 			images.forEach(function(image) {
-				self.gallery.add(Ti.UI.createImageView({
-					left : 0,
-					width : 300,
-					height : 400,
-					image : 'https:' + image.replace('small2', 'large'),
-				}));
+				self.gallery.addImage('https:' + image.replace('small2', 'largeRetina'));
 			});
+		} else {
 			self.gallery.animate({
-				opacity : 1
+				transform : Ti.UI.create2DMatrix({
+					scale : 0.7
+				}),
+				duration : 100
+			}, function() {
+				self.gallery.getChildren().forEach(function(child) {
+					self.gallery.remove(child);
+				});
+				images.forEach(function(image) {
+					self.gallery.add(Ti.UI.createImageView({
+						left : 0,
+						width : 300,
+						height : 400,
+						image : 'https:' + image.replace('small2', 'large'),
+					}));
+				});
+				self.gallery.animate({
+					transform : Ti.UI.create2DMatrix({
+						scale : 1
+					}),
+					duration : 50
+				});
 			});
-		});
+		}
 	}
 
 	if (Ti.Android) {
@@ -78,28 +64,30 @@ Module = function(options) {
 		layout : 'vertical'
 	});
 	self.add(page);
-	self.gallery = Ti.UI.createScrollView({
-		top : 0,
-		height : 400,
-		width : Ti.UI.FILL,
-		horizontalWrap : false,
-		bubbleParent : false,
-		layout : 'horizontal',
-		contentHeight : 400,
-		contentWidth : Ti.UI.SIZE
-	});
-	self.variantcontainer = Ti.UI.createView({
-		top : 0,
-		left : 10,
-		right : 10,
-		opacity : 0.8,
-		layout : 'horizontal',
-		height : 40
-	});
-	getProduct(options.id, function(_product) {
+	if (Ti.Android) {
+		self.gallery = TouchGallery.createTouchGallery({
+			top : 0,
+			height : 400,
+			width : Ti.UI.FILL,
+
+			bubbleParent : false,
+		});
+	} else {
+		self.gallery = Ti.UI.createScrollView({
+			top : 0,
+			height : 400,
+			width : Ti.UI.FILL,
+			horizontalWrap : false,
+			bubbleParent : false,
+			layout : 'horizontal',
+			contentHeight : 400,
+			contentWidth : Ti.UI.SIZE
+		});
+	}
+	require('adapter/product').get(options.id, function(_product) {
 		console.log('Info: product found');
-		console.log(product);
 		product = _product;
+		// import
 		if (product.items) {
 			console.log('Info: product has items');
 			var sizes = [];
@@ -109,20 +97,26 @@ Module = function(options) {
 			console.log('Info: product has items');
 
 		}
-		product.images.forEach(function(image) {
-			self.gallery.add(Ti.UI.createImageView({
-				left : 0,
-				width : 300,
-				height : 400,
-				image : 'https:' + image.replace('small2', 'large'),
-			}));
-		});
+		if (Ti.Android) {
+			var bigimages = [];
+			product.images.forEach(function(image) {
+				bigimages.push('https:' + image.replace('small2', 'largeRetina'));
+			});
+			self.gallery.setImages(bigimages);
+		} else {
+			product.images.forEach(function(image) {
+				self.gallery.add(Ti.UI.createImageView({
+					left : 0,
+					width : 300,
+					height : 400,
+					image : 'https:' + image.replace('small2', 'large'),
+				}));
+			});
+		}
 		page.add(self.gallery);
-		page.add(self.variantcontainer);
-		
-		self.variantcontainer.add(require('ui/variants.widget')(product));
-		
-		if (actionbar && product.brands) {
+		page.add(require('ui/variants.widget')(product, updateGallery));
+
+		if (actionbar && product.brand) {
 			actionbar.setSubtitle(product.brand);
 		} else {
 			page.add(Ti.UI.createLabel({
@@ -138,6 +132,7 @@ Module = function(options) {
 				}
 			}));
 		}
+
 		var priceview = Ti.UI.createView({
 			backgroundImage : '/assets/price.png',
 			width : 90,
@@ -204,15 +199,14 @@ Module = function(options) {
 		console.log('Info: page added to window');
 	});
 	if (Ti.Android) {
-		var actionbar;
 		self.addEventListener("open", function() {
 			console.log('Info: window opened');
 			var activity = self.getActivity();
 			if (activity && activity.actionBar) {
 				actionbar = activity.actionBar;
 				actionbar.setDisplayHomeAsUp(true);
+				product && product.brand && actionbar.setSubtitle(product.brand);
 				abx.setDisableIcon(true);
-				console.log('Info: Icon disabled');
 				actionbar.onHomeIconItemSelected = function() {
 					self.close();
 				};
@@ -237,14 +231,29 @@ Module = function(options) {
 						showAsAction : Ti.Android.SHOW_AS_ACTION_IF_ROOM,
 						icon : Ti.App.Android.R.drawable.ic_action_basket
 					}).addEventListener("click", function() {
-						var Basket = new (require('adapter/basket'))();
-						var basket = Basket.addArticle(options.id);
+						/* save to basket*/
 						Ti.Android && Ti.UI.createNotification({
 							message : product.name + ' ist nun in Deinem Warenkorb.'
 						}).show();
-						setTimeout(require('ui/basket.widget'), 2000);
+						self.gallery.animate({
+							top : -200,
+							left : 300,
+							opacity : 0.1,
+							transform : Ti.UI.create2DMatrix({
+								scale : 0.2,
+								rotate : 20
+							})
+						}, function() {
+							var Basket = new (require('adapter/basket'))();
+							var basket = Basket.addArticle(product);
+
+							self.close();
+							setTimeout(require('ui/basket.widget'), 50);
+						});
+
 					});
 				};
+				activity.invalidateOptionsMenu();
 			}
 		});
 	};

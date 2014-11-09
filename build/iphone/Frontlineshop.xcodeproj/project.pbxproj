@@ -30,11 +30,11 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2412F467115C296300454E5B /* TiMediaVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412F465115C296300454E5B /* TiMediaVideoPlayer.m */; };
 		242E8E3111BA39FD0046A0D0 /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		50EABA9C984744DCA347B613 /* libdk.napp.social.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C94FF6CCF3964CB4943BE535 /* libdk.napp.social.a */; };
-		FD2B1BEF4DAC4640B271C8F6 /* liborg.bcbhh.iosflipview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6221238321F461B863A48BC /* liborg.bcbhh.iosflipview.a */; };
+		42FC2879788B4065A9635DE1 /* libdk.napp.social.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 514582CD7AE749E6A9D3F7C2 /* libdk.napp.social.a */; };
+		AA659DAE1D674DF2A8A3A61C /* liborg.bcbhh.iosflipview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD394983F6A4C6AAFB2FA21 /* liborg.bcbhh.iosflipview.a */; };
 		242E8E3211BA39FE0046A0D0 /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		E45C432309A44E419EB3F944 /* libdk.napp.social.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C94FF6CCF3964CB4943BE535 /* libdk.napp.social.a */; };
-		CAC63E8CCB454033A1C6AC26 /* liborg.bcbhh.iosflipview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6221238321F461B863A48BC /* liborg.bcbhh.iosflipview.a */; };
+		E3FC2A9E701F468090331211 /* libdk.napp.social.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 514582CD7AE749E6A9D3F7C2 /* libdk.napp.social.a */; };
+		33AC2487E05C420195B9EBEC /* liborg.bcbhh.iosflipview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD394983F6A4C6AAFB2FA21 /* liborg.bcbhh.iosflipview.a */; };
 		242E967711BAD2F20046A0D0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967411BAD2F20046A0D0 /* AsyncSocket.m */; };
 		242E967811BAD2F20046A0D0 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967611BAD2F20046A0D0 /* AsyncUdpSocket.m */; };
 		242E967911BAD2F20046A0D0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967411BAD2F20046A0D0 /* AsyncSocket.m */; };
@@ -901,8 +901,8 @@
 		DABB37B412E8CB280026A6EA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EB0A57111E1BAE001DC2D1 /* libxml2.dylib */; };
 		DABB37B512E8CB280026A6EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24597034118FF66300519F79 /* StoreKit.framework */; };
 		DABB37B612E8CB280026A6EA /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		766891689BDF45F0A5CE66AB /* libdk.napp.social.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C94FF6CCF3964CB4943BE535 /* libdk.napp.social.a */; };
-		E5806A1010AD42869566A177 /* liborg.bcbhh.iosflipview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6221238321F461B863A48BC /* liborg.bcbhh.iosflipview.a */; };
+		B212F70EC7C84F8CB816A8A4 /* libdk.napp.social.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 514582CD7AE749E6A9D3F7C2 /* libdk.napp.social.a */; };
+		7804E4E4103B4EDAB1BD8191 /* liborg.bcbhh.iosflipview.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD394983F6A4C6AAFB2FA21 /* liborg.bcbhh.iosflipview.a */; };
 		DABB37B712E8CB280026A6EA /* libtiverify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D5C75811E6364F00F097E2 /* libtiverify.a */; };
 		DABDEB08128B5A8F00C85FEA /* AudioStreamerCUR.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9FF582128A1F3600457759 /* AudioStreamerCUR.m */; };
 		DABF3ECF134D210400836137 /* TiBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF3ECE134D210400836137 /* TiBuffer.m */; };
@@ -952,8 +952,8 @@
 		241EAA21118AB3BB0081A5BE /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = Classes/defines.h; sourceTree = SOURCE_ROOT; };
 		241EAEC5118E2BA90081A5BE /* project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = project.xcconfig; sourceTree = "<group>"; };
 		242E8E3011BA39FD0046A0D0 /* libTiCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTiCore.a; path = lib/libTiCore.a; sourceTree = SOURCE_ROOT; };
-		C94FF6CCF3964CB4943BE535 /* libdk.napp.social.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdk.napp.social.a; path = "/Users/rainerschleevoigt/Library/Application Support/Titanium/modules/iphone/dk.napp.social/1.7.5/libdk.napp.social.a"; sourceTree = "<absolute>"; };
-		C6221238321F461B863A48BC /* liborg.bcbhh.iosflipview.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liborg.bcbhh.iosflipview.a; path = "/Users/rainerschleevoigt/Library/Application Support/Titanium/modules/iphone/org.bcbhh.iosflipview/1.0.1/liborg.bcbhh.iosflipview.a"; sourceTree = "<absolute>"; };
+		514582CD7AE749E6A9D3F7C2 /* libdk.napp.social.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdk.napp.social.a; path = "/Users/rainerschleevoigt/Library/Application Support/Titanium/modules/iphone/dk.napp.social/1.7.5/libdk.napp.social.a"; sourceTree = "<absolute>"; };
+		FBD394983F6A4C6AAFB2FA21 /* liborg.bcbhh.iosflipview.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liborg.bcbhh.iosflipview.a; path = "/Users/rainerschleevoigt/Library/Application Support/Titanium/modules/iphone/org.bcbhh.iosflipview/1.0.1/liborg.bcbhh.iosflipview.a"; sourceTree = "<absolute>"; };
 		242E95C811BAC8B40046A0D0 /* TiDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiDebugger.h; path = Classes/TiDebugger.h; sourceTree = SOURCE_ROOT; };
 		242E967311BAD2F20046A0D0 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = Classes/AsyncSocket.h; sourceTree = SOURCE_ROOT; };
 		242E967411BAD2F20046A0D0 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = Classes/AsyncSocket.m; sourceTree = SOURCE_ROOT; };
@@ -1586,8 +1586,8 @@
 				24EB0A58111E1BAE001DC2D1 /* libxml2.dylib in Frameworks */,
 				24597035118FF66300519F79 /* StoreKit.framework in Frameworks */,
 				242E8E3111BA39FD0046A0D0 /* libTiCore.a in Frameworks */,
-				50EABA9C984744DCA347B613 /* libdk.napp.social.a in Frameworks */,
-				FD2B1BEF4DAC4640B271C8F6 /* liborg.bcbhh.iosflipview.a in Frameworks */,
+				42FC2879788B4065A9635DE1 /* libdk.napp.social.a in Frameworks */,
+				AA659DAE1D674DF2A8A3A61C /* liborg.bcbhh.iosflipview.a in Frameworks */,
 				B606EF60190B42FB00663EFC /* libAPSHTTPClient.a in Frameworks */,
 				242EA11611BD956F0046A0D0 /* ExternalAccessory.framework in Frameworks */,
 				24D5C75911E6364F00F097E2 /* libtiverify.a in Frameworks */,
@@ -1627,8 +1627,8 @@
 				24D8E4AB119B9D8A00F8CAA6 /* libxml2.dylib in Frameworks */,
 				24D8E4AC119B9D8A00F8CAA6 /* StoreKit.framework in Frameworks */,
 				242E8E3211BA39FE0046A0D0 /* libTiCore.a in Frameworks */,
-				E45C432309A44E419EB3F944 /* libdk.napp.social.a in Frameworks */,
-				CAC63E8CCB454033A1C6AC26 /* liborg.bcbhh.iosflipview.a in Frameworks */,
+				E3FC2A9E701F468090331211 /* libdk.napp.social.a in Frameworks */,
+				33AC2487E05C420195B9EBEC /* liborg.bcbhh.iosflipview.a in Frameworks */,
 				24D5C75A11E6364F00F097E2 /* libtiverify.a in Frameworks */,
 				DAA4B2AF134E3DBD00AB6011 /* libti_ios_debugger.a in Frameworks */,
 				DADE76D613D65C6F0079FC75 /* libicucore.dylib in Frameworks */,
@@ -1668,8 +1668,8 @@
 				DABB37B412E8CB280026A6EA /* libxml2.dylib in Frameworks */,
 				DABB37B512E8CB280026A6EA /* StoreKit.framework in Frameworks */,
 				DABB37B612E8CB280026A6EA /* libTiCore.a in Frameworks */,
-				766891689BDF45F0A5CE66AB /* libdk.napp.social.a in Frameworks */,
-				E5806A1010AD42869566A177 /* liborg.bcbhh.iosflipview.a in Frameworks */,
+				B212F70EC7C84F8CB816A8A4 /* libdk.napp.social.a in Frameworks */,
+				7804E4E4103B4EDAB1BD8191 /* liborg.bcbhh.iosflipview.a in Frameworks */,
 				DABB37B712E8CB280026A6EA /* libtiverify.a in Frameworks */,
 				DAA4B2B0134E3DBD00AB6011 /* libti_ios_debugger.a in Frameworks */,
 				DADE76D713D65C7D0079FC75 /* libicucore.dylib in Frameworks */,
@@ -2762,8 +2762,8 @@
 				DAA4B2AD134E3DBD00AB6011 /* libti_ios_debugger.a */,
 				24D5C75811E6364F00F097E2 /* libtiverify.a */,
 				242E8E3011BA39FD0046A0D0 /* libTiCore.a */,
-				C94FF6CCF3964CB4943BE535 /* libdk.napp.social.a */,
-				C6221238321F461B863A48BC /* liborg.bcbhh.iosflipview.a */,
+				514582CD7AE749E6A9D3F7C2 /* libdk.napp.social.a */,
+				FBD394983F6A4C6AAFB2FA21 /* liborg.bcbhh.iosflipview.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
