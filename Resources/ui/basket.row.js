@@ -29,7 +29,7 @@ module.exports = function(parent, item) {
 		right : 20,
 		font : {
 			fontSize : 22,
-			fontFamily : 'TheSansSemiBold'
+			fontFamily : 'DroidSans'
 		}
 	}));
 	handlerviewright.add(Ti.UI.createImageView({
@@ -50,7 +50,7 @@ module.exports = function(parent, item) {
 		right : 20,
 		font : {
 			fontSize : 22,
-			fontFamily : 'TheSansSemiBold'
+			fontFamily : 'DroidSans'
 		}
 	}));
 	handlerviewleft.add(Ti.UI.createImageView({
@@ -97,7 +97,7 @@ module.exports = function(parent, item) {
 		top : 0,
 		font : {
 			fontSize : 22,
-			fontFamily : 'TheSansSemiBold'
+			fontFamily : 'DroidSans'
 		}
 	}));
 	container.add(Ti.UI.createLabel({
@@ -109,7 +109,7 @@ module.exports = function(parent, item) {
 		top : 10,
 		font : {
 			fontSize : 16,
-			fontFamily : 'TheSansSemiBold'
+			fontFamily : 'DroidSans'
 		}
 	}));
 	mainview.add(Ti.UI.createLabel({

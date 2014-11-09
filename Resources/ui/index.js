@@ -41,8 +41,9 @@ Module = function(sex) {
 				showAsAction : Ti.Android.SHOW_AS_ACTION_IF_ROOM,
 				icon : Ti.App.Android.R.drawable.ic_action_basket
 			}).addEventListener("click", require('ui/basket.widget'));
-			
+
 		};
+		activity.invalidateOptionsMenu();
 	});
 
 };

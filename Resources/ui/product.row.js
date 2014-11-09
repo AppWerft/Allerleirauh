@@ -22,7 +22,7 @@ module.exports = function(product) {
 		right : 15,
 		font : {
 			fontSize : 22,
-			fontFamily : 'TheSansSemiBold'
+			fontFamily : 'DroidSans'
 		}
 	}));
 	row.add(Ti.UI.createLabel({
@@ -34,7 +34,7 @@ module.exports = function(product) {
 		left : 90,
 		font : {
 			fontSize : 14,
-			fontFamily : 'TheSansSemiBold'
+			fontFamily : 'DroidSans'
 		}
 	}));
 	var price = Ti.UI.createLabel({

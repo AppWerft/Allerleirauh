@@ -1,6 +1,5 @@
 if (Ti.Android) {
 	var abx = require('com.alcoapps.actionbarextras');
-
 }
 
 Module = function(options) {
@@ -59,10 +58,13 @@ Module = function(options) {
 		layout : 'vertical'
 	});
 	self.add(page);
-
-	self.gallery = Ti.UI.createScrollView({
+	self.gallerycontainer =Ti.UI.createView({
 		top : 0,
 		height : 300,
+		bubbleParent : false,
+	});
+	self.gallery = Ti.UI.createScrollView({
+		height : Ti.UI.FILL,
 		width : Ti.UI.FILL,
 		horizontalWrap : false,
 		bubbleParent : false,
@@ -70,8 +72,11 @@ Module = function(options) {
 		contentHeight : 300,
 		contentWidth : Ti.UI.SIZE
 	});
-	self.gallery.add(Ti.UI.createImageView({
-		bottom : 5,
+	self.gallerycontainer.add(self.gallery);
+	page.add(self.gallerycontainer);
+	
+	self.gallerycontainer.add(Ti.UI.createImageView({
+		top : 250,
 		left : 5,zIndex:999,
 		image : '/assets/lupe.png',
 		width : 40,
@@ -103,7 +108,7 @@ Module = function(options) {
 			}));
 		});
 
-		page.add(self.gallery);
+		page.add(self.gallerycontainer);
 		page.add(require('ui/variants.widget')(product, updateGallery));
 
 		if (actionbar && product.brand) {
@@ -118,7 +123,7 @@ Module = function(options) {
 				left : 10,
 				font : {
 					fontSize : 22,
-					fontFamily : 'TheSansSemiBold'
+					fontFamily : 'DroidSans'
 				}
 			}));
 		}
@@ -152,7 +157,7 @@ Module = function(options) {
 			left : 10,
 			font : {
 				fontSize : 16,
-				fontFamily : 'TheSansSemiBold'
+				fontFamily : 'DroidSans'
 			}
 		}));
 		product.productDetails && product.productDetails.forEach(function(detail) {
@@ -166,7 +171,7 @@ Module = function(options) {
 				left : 30,
 				font : {
 					fontSize : 16,
-					fontFamily : 'TheSansSemiBold'
+					fontFamily : 'DroidSans'
 				}
 			}));
 		});
@@ -181,7 +186,7 @@ Module = function(options) {
 			right : 10,
 			font : {
 				fontSize : 16,
-				fontFamily : 'TheSansSemiBold'
+				fontFamily : 'DroidSans'
 			}
 		}));
 		self.add(page);

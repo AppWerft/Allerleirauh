@@ -81,7 +81,7 @@ Module = function(title, urlKey, genderage) {
 				font : {
 					fontSize : 12,
 					fontWeight : 'bold',
-					fontFamily : 'TheSansSemiBold'
+					fontFamily : 'DroidSans'
 				}
 			}));
 			self.add(Ti.UI.createLabel({
@@ -152,7 +152,7 @@ Module = function(title, urlKey, genderage) {
 					left : 110,
 					font : {
 						fontSize : 22,
-						fontFamily : 'TheSansSemiBold'
+						fontFamily : 'DroidSans'
 					}
 				}));
 				console.log(subcategory.thumbnail);
@@ -218,6 +218,7 @@ Module = function(title, urlKey, genderage) {
 						icon : Ti.App.Android.R.drawable.ic_action_basket
 					}).addEventListener("click", require('ui/basket.widget'));
 				};
+				activity.invalidateOptionsMenu();
 			}
 		});
 	};

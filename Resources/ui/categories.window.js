@@ -25,7 +25,7 @@ Module = function(title, catalogtree, genderage) {
 			left : 100,
 			font : {
 				fontSize : 20,
-				fontFamily : 'TheSansSemiBold'
+				fontFamily : 'DroidSans-Bold'
 			}
 		}));
 		var subs = [];
@@ -41,8 +41,8 @@ Module = function(title, catalogtree, genderage) {
 			height : 66,
 			left : 100,
 			font : {
-				fontSize : 14,
-				fontFamily : 'TheSansSemiBold'
+				fontSize : 12,
+				fontFamily : 'DroidSans'
 			}
 		}));
 		var thumbnail = Ti.UI.createImageView({
@@ -56,7 +56,7 @@ Module = function(title, catalogtree, genderage) {
 		});
 		row.add(thumbnail);
 		require('vendor/cachedimage')({
-			url : 'https:' + category.thumbnail,
+			url : 'https:' + category.thumbnail.replace('small1', 'large').replace('small2', 'large'),
 			view : thumbnail
 		});
 		rows.push(row);
@@ -70,7 +70,6 @@ Module = function(title, catalogtree, genderage) {
 		else
 			self.tab.open(win);
 	});
-
 	return self;
 };
 

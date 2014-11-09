@@ -1,7 +1,8 @@
 Module = function(title, subcatalogtree, genderage) {
 	var self = Ti.UI.createWindow({
 		fullscreen : true,
-		title : title,orientationModes : [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
+		title : title,
+		orientationModes : [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
 	});
 	var container = Ti.UI.createTableView();
 	self.add(container);
@@ -20,20 +21,25 @@ Module = function(title, subcatalogtree, genderage) {
 			color : '#444',
 			width : Ti.UI.FILL,
 			textAlign : 'left',
-			left : 110,
+			left : 90,
 			font : {
 				fontSize : 22,
-				fontFamily : 'TheSansSemiBold'
+				fontFamily : 'DroidSans'
 			}
 		}));
-		row.add(Ti.UI.createImageView({
+		var thumbnail = Ti.UI.createImageView({
 			image : 'https:' + subcategory.thumbnail.replace('small1', 'large'),
 			left : 0,
 			top : 5,
 			bottom : 5,
-			width : 90,
+			width : 80,
 			height : 100
-		}));
+		});
+		require('vendor/cachedimage')({
+			url : 'https:' + subcategory.thumbnail.replace('small1', 'large'),
+			view : thumbnail
+		});
+		row.add(thumbnail);
 		rows.push(row);
 	});
 	container.setData(rows);
@@ -62,6 +68,7 @@ Module = function(title, subcatalogtree, genderage) {
 						icon : Ti.App.Android.R.drawable.ic_action_basket
 					}).addEventListener("click", require('ui/basket.widget'));
 				};
+				activity.invalidateOptionsMenu();
 			} else {
 				console.log('Warning: windowactivity has no actionbar');
 				console.log(activity);
