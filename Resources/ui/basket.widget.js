@@ -12,20 +12,25 @@ Module = function() {
 		var self = Ti.UI.createWindow({
 			fullscreen : true,
 		});
+		var section = Ti.UI.createTableViewSection({
+			headerTitle : null
+		});
 		var container = Ti.UI.createTableView({
-			bottom : 0
+			bottom : 0,
+			data : [section]
 		});
-		var rows = [];
-		self.add(container);
-		basket.forEach(function(item) {
-			rows.push(require('ui/basket.row')(container,item));
-		});
-		container.setData(rows);
-		/*container.addEventListener('swipe', function(_e) {
-			console.log(_e.index);
-			_e.row.setLeft(60);
 
-		});*/
+		self.add(container);
+		var ndx = 0;
+		basket.forEach(function(item) {
+			section.add(require('ui/basket.row')(container, item, ndx++));
+		});
+		//container.setData(rows);
+		/*container.addEventListener('swipe', function(_e) {
+		 console.log(_e.index);
+		 _e.row.setLeft(60);
+
+		 });*/
 		if (Ti.Android) {
 			self.addEventListener("open", function() {
 				var activity = self.getActivity();
@@ -63,14 +68,13 @@ Module = function() {
 							title : 'Kasse',
 							showAsAction : Ti.Android.SHOW_AS_ACTION_IF_ROOM,
 							icon : Ti.App.Android.R.drawable.ic_action_pos
-						}).addEventListener("click", function() {
+						}).addEventListener("click", require('ui/billing'));
 
-						});
 					};
 				}
 			});
 		};
-		
+
 		self.open();
 
 	}

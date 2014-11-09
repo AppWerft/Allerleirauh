@@ -58,7 +58,7 @@ Module = function(options) {
 		layout : 'vertical'
 	});
 	self.add(page);
-	self.gallerycontainer =Ti.UI.createView({
+	self.gallerycontainer = Ti.UI.createView({
 		top : 0,
 		height : 300,
 		bubbleParent : false,
@@ -74,10 +74,11 @@ Module = function(options) {
 	});
 	self.gallerycontainer.add(self.gallery);
 	page.add(self.gallerycontainer);
-	
+
 	self.gallerycontainer.add(Ti.UI.createImageView({
 		top : 250,
-		left : 5,zIndex:999,
+		left : 5,
+		zIndex : 999,
 		image : '/assets/lupe.png',
 		width : 40,
 		height : 40
@@ -103,6 +104,7 @@ Module = function(options) {
 			self.gallery.add(Ti.UI.createImageView({
 				left : 0,
 				width : 200,
+				defaultImage : '/assets/fls.png',
 				height : 300,
 				image : 'https:' + image.replace('small2', 'large'),
 			}));

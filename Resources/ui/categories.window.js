@@ -19,12 +19,12 @@ Module = function(title, catalogtree, genderage) {
 			color : '#444',
 			width : Ti.UI.FILL,
 			textAlign : 'left',
-			top : 5,
-			color : '#555',
-			height : 25,
+			top : 8,
+			color : '#666',
+			height : 30,
 			left : 100,
 			font : {
-				fontSize : 20,
+				fontSize : 22,
 				fontFamily : 'DroidSans-Bold'
 			}
 		}));
@@ -38,7 +38,7 @@ Module = function(title, catalogtree, genderage) {
 			width : Ti.UI.FILL,
 			textAlign : 'left',
 			top : 30,
-			height : 66,
+			height : 70,
 			left : 100,
 			font : {
 				fontSize : 12,
@@ -51,6 +51,7 @@ Module = function(title, catalogtree, genderage) {
 			top : 0,
 			top : 2,
 			bottom : 2,
+			defaultImage : '/assets/fls.png',
 			width : 80,
 			height : 100
 		});

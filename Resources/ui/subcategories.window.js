@@ -18,13 +18,13 @@ Module = function(title, subcatalogtree, genderage) {
 		});
 		row.add(Ti.UI.createLabel({
 			text : subcategory.name,
-			color : '#444',
+			color : '#666',
 			width : Ti.UI.FILL,
 			textAlign : 'left',
 			left : 90,
 			font : {
 				fontSize : 22,
-				fontFamily : 'DroidSans'
+				fontFamily : 'DroidSans-Bold'
 			}
 		}));
 		var thumbnail = Ti.UI.createImageView({
@@ -32,6 +32,7 @@ Module = function(title, subcatalogtree, genderage) {
 			left : 0,
 			top : 5,
 			bottom : 5,
+			defaultImage : '/assets/fls.png',
 			width : 80,
 			height : 100
 		});

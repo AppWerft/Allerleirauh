@@ -7,13 +7,13 @@ module.exports = function(product) {
 	});
 	row.add(Ti.UI.createImageView({
 		left : 0,
-		width : 80,
+		width : 80,defaultImage : '/assets/fls.png',
 		height : 100,
 		image : 'https:' + product.images[0],
 	}));
 	row.add(Ti.UI.createLabel({
 		text : product.name,
-		color : '#444',
+		color : '#666',
 		width : Ti.UI.FILL,
 		textAlign : 'left',
 		top : 5,
@@ -22,7 +22,7 @@ module.exports = function(product) {
 		right : 15,
 		font : {
 			fontSize : 22,
-			fontFamily : 'DroidSans'
+			fontFamily : 'DroidSans-Bold'
 		}
 	}));
 	row.add(Ti.UI.createLabel({

@@ -2,7 +2,7 @@ function getRemover(product) {
 
 }
 
-module.exports = function(parent, item) {
+module.exports = function(parent, item,ndx) {
 	var self = Ti.UI.createTableViewRow({
 		hasChild : true,
 		backgroundColor : 'white',
@@ -14,10 +14,6 @@ module.exports = function(parent, item) {
 	});
 	var handlerviewright = Ti.UI.createView({
 		backgroundColor : '#f99'
-	});
-	handlerviewright.addEventListener('click', function(_e) {
-		parent.deleteRow(self);
-		
 	});
 	handlerviewright.add(Ti.UI.createLabel({
 		text : item.name,
@@ -58,18 +54,15 @@ module.exports = function(parent, item) {
 		bottom : 10,
 		image : '/assets/trash.png'
 	}));
+	handlerviewright.addEventListener('click', function(_e) {
+		parent.deleteRow(ndx);
+	});
 	handlerviewleft.addEventListener('click', function(_e) {
-		parent.deleteRow(self);
-		return;
-		self.animate({
-			height : 10
-		}, function() {
-			parent.deleteRow(self);
-		});
+		parent.deleteRow(ndx);
 	});
 	var thumbnail = Ti.UI.createImageView({
 		image : 'https:' + item.images[0].replace('small2', 'large'),
-		left : 0,
+		left : 0,defaultImage : '/assets/fls.png',
 		top : 5,
 		bottom : 5,
 		width : 120,

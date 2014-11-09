@@ -159,7 +159,7 @@ Module = function(title, urlKey, genderage) {
 				row.add(Ti.UI.createImageView({
 					image : 'https:' + subcategory.thumbnail.replace('small1', 'large'),
 					left : 0,
-					top : 5,
+					top : 5,defaultImage : '/assets/fls.png',
 					bottom : 5,
 					width : 90,
 					height : 100
