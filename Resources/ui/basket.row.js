@@ -17,12 +17,7 @@ module.exports = function(parent, item) {
 	});
 	handlerviewright.addEventListener('click', function(_e) {
 		parent.deleteRow(self);
-		return;
-		self.animate({
-			height : 10
-		}, function() {
-			parent.deleteRow(self);
-		});
+		
 	});
 	handlerviewright.add(Ti.UI.createLabel({
 		text : item.name,
@@ -34,7 +29,7 @@ module.exports = function(parent, item) {
 		right : 20,
 		font : {
 			fontSize : 22,
-			fontFamily : 'Georgia'
+			fontFamily : 'TheSansSemiBold'
 		}
 	}));
 	handlerviewright.add(Ti.UI.createImageView({
@@ -44,12 +39,6 @@ module.exports = function(parent, item) {
 	}));
 	handlerviewright.addEventListener('click', function(_e) {
 		parent.deleteRow(self);
-		return;
-		self.animate({
-			height : 10
-		}, function() {
-			parent.deleteRow(self);
-		});
 	});
 	handlerviewleft.add(Ti.UI.createLabel({
 		text : item.name,
@@ -61,7 +50,7 @@ module.exports = function(parent, item) {
 		right : 20,
 		font : {
 			fontSize : 22,
-			fontFamily : 'Georgia'
+			fontFamily : 'TheSansSemiBold'
 		}
 	}));
 	handlerviewleft.add(Ti.UI.createImageView({
@@ -108,7 +97,7 @@ module.exports = function(parent, item) {
 		top : 0,
 		font : {
 			fontSize : 22,
-			fontFamily : 'Georgia'
+			fontFamily : 'TheSansSemiBold'
 		}
 	}));
 	container.add(Ti.UI.createLabel({
@@ -120,7 +109,7 @@ module.exports = function(parent, item) {
 		top : 10,
 		font : {
 			fontSize : 16,
-			fontFamily : 'Georgia'
+			fontFamily : 'TheSansSemiBold'
 		}
 	}));
 	mainview.add(Ti.UI.createLabel({

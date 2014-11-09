@@ -25,7 +25,7 @@ Module = function(title, catalogtree, genderage) {
 			left : 100,
 			font : {
 				fontSize : 20,
-				fontFamily : 'Georgia'
+				fontFamily : 'TheSansSemiBold'
 			}
 		}));
 		var subs = [];
@@ -42,11 +42,11 @@ Module = function(title, catalogtree, genderage) {
 			left : 100,
 			font : {
 				fontSize : 14,
-				fontFamily : 'Georgia'
+				fontFamily : 'TheSansSemiBold'
 			}
 		}));
 		var thumbnail = Ti.UI.createImageView({
-			image : 'https:' + category.thumbnail,
+			image : 'https:' + category.thumbnail.replace('small1', 'large').replace('small2', 'large'),
 			left : 0,
 			top : 0,
 			top : 2,

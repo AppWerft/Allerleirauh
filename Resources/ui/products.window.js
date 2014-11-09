@@ -81,7 +81,7 @@ Module = function(title, urlKey, genderage) {
 				font : {
 					fontSize : 12,
 					fontWeight : 'bold',
-					fontFamily : 'Georgia'
+					fontFamily : 'TheSansSemiBold'
 				}
 			}));
 			self.add(Ti.UI.createLabel({
@@ -152,12 +152,12 @@ Module = function(title, urlKey, genderage) {
 					left : 110,
 					font : {
 						fontSize : 22,
-						fontFamily : 'Georgia'
+						fontFamily : 'TheSansSemiBold'
 					}
 				}));
-				
+				console.log(subcategory.thumbnail);
 				row.add(Ti.UI.createImageView({
-					image : 'https:' + subcategory.thumbnail.replace('small2', 'large').replace('small1', 'large'),
+					image : 'https:' + subcategory.thumbnail.replace('small1', 'large'),
 					left : 0,
 					top : 5,
 					bottom : 5,

@@ -23,7 +23,7 @@ Module = function(title, subcatalogtree, genderage) {
 			left : 110,
 			font : {
 				fontSize : 22,
-				fontFamily : 'Georgia'
+				fontFamily : 'TheSansSemiBold'
 			}
 		}));
 		row.add(Ti.UI.createImageView({
