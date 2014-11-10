@@ -9,7 +9,7 @@ var getNextData = function(urlKey, callback) {
 		onload : function() {
 			var res = JSON.parse(this.responseText).response;
 			callback(res);
-		},
+		}, 
 		onerror : function() {
 			alert('No internet – no fun!');
 		}
