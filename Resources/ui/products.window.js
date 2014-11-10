@@ -9,7 +9,7 @@ var getNextData = function(urlKey, callback) {
 		onload : function() {
 			var res = JSON.parse(this.responseText).response;
 			callback(res);
-		}, 
+		},
 		onerror : function() {
 			alert('No internet – no fun!');
 		}
@@ -20,7 +20,8 @@ var getNextData = function(urlKey, callback) {
 
 Module = function(title, urlKey, genderage) {
 	var actionbar,
-	    menu,spinner,
+	    menu,
+	    spinner,
 	    brands = [];
 	var brandfilter = false;
 	var self = Ti.UI.createWindow({
@@ -63,51 +64,9 @@ Module = function(title, urlKey, genderage) {
 			brands.push(brand);
 			brandobj = null;
 			var rows = [];
-			var slider = Ti.UI.createSlider({
-				height : 30,
-				top : 10,
-				width : '66%',
-				min : minprice,
-				max : maxprice,
-				value : maxprice
+			var slider = require('ui/priceslider.widget')(minprice, maxprice, function() {
 			});
-			self.add(Ti.UI.createLabel({
-				text : 'Preisfilter',
-				color : '#bbb',
-				width : Ti.UI.FILL,
-				textAlign : 'left',
-				top : 40,
-				left : 10,
-				font : {
-					fontSize : 12,
-					fontWeight : 'bold',
-					fontFamily : 'DroidSans'
-				}
-			}));
-			self.add(Ti.UI.createLabel({
-				text : '€ ' + minprice,
-				color : '#333',
-				width : Ti.UI.SIZE,
-				top : 10,
-				left : 5,
-				left : 10,
-				font : {
-					fontSize : 10,
-				}
-			}));
-			self.add(Ti.UI.createLabel({
-				text : '€ ' + maxprice,
-				color : '#333',
-				width : Ti.UI.SIZE,
-				top : 10,
-				right : 5,
-				font : {
-					fontSize : 10,
-				}
-			}));
 			self.add(slider);
-			slider.show();
-
 			res.products.forEach(function(product) {
 				var row = require('ui/product.row')(product);
 				rows.push(row);
@@ -137,34 +96,7 @@ Module = function(title, urlKey, genderage) {
 			Ti.Android && abx.setSubtitle(res.children.length + ' Kategorien');
 			spinner.hide();
 			res.children.forEach(function(subcategory) {
-				var row = Ti.UI.createTableViewRow({
-					hasChild : true,
-					backgroundColor : 'white',
-					height : 100,
-					titletext : subcategory.name,
-					itemId : subcategory.urlKey,
-					genderage : genderage
-				});
-				row.add(Ti.UI.createLabel({
-					text : subcategory.name,
-					color : '#444',
-					width : Ti.UI.FILL,
-					textAlign : 'left',
-					left : 110,
-					font : {
-						fontSize : 22,
-						fontFamily : 'DroidSans'
-					}
-				}));
-				console.log(subcategory.thumbnail);
-				row.add(Ti.UI.createImageView({
-					image : 'https:' + subcategory.thumbnail,
-					left : 0,
-					top : 5,defaultImage : '/assets/fls.png',
-					bottom : 5,
-					width : 90,
-					height : 100
-				}));
+				var row = require('ui/categoryrow.widget')(subcategory);
 				rows.push(row);
 			});
 			container.setData(rows);
@@ -186,7 +118,6 @@ Module = function(title, urlKey, genderage) {
 				actionbar = activity.actionBar;
 				actionbar.setTitle(title);
 				actionbar.setDisplayHomeAsUp(true);
-				console.log('/assets/' + genderage + 'icon.png');
 				actionbar.setIcon('/assets/' + genderage + 'icon.png');
 				actionbar.onHomeIconItemSelected = function() {
 					self.close();
@@ -203,9 +134,8 @@ Module = function(title, urlKey, genderage) {
 						var brandpicker = TiDialogs.createMultiPicker({
 							title : "Wähle Deine Lieblingsmarken",
 							options : brands,
-							selected : brands, // <-- optional
-							okButtonTitle : "Yep", // <-- optional
-							cancelButtonTitle : "Nah" // <-- optional
+							selected : brands,
+							okButtonTitle : "Yep"
 						});
 						brandpicker.show();
 						brandpicker.addEventListener('click', function(_e) {
