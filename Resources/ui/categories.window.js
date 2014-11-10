@@ -7,22 +7,31 @@ Module = function(title, catalogtree, genderage) {
 	var rows = [];
 	catalogtree.response.children.forEach(function(category) {
 		var row = Ti.UI.createTableViewRow({
-			hasChild : true,
+			hasDetails : true,
 			backgroundColor : 'white',
-			height : 105,
+			height : Ti.UI.SIZE,
 			titletext : category.name,
 			itemId : JSON.stringify(category.children),
 			genderage : genderage
 		});
-		row.add(Ti.UI.createLabel({
+		var box = Ti.UI.createView({
+			left : 100,
+			top : 5,
+			right : 10,
+			layout : 'vertical'
+		});
+		row.add(box);
+		box.add(Ti.UI.createLabel({
 			text : category.name,
 			color : '#444',
 			width : Ti.UI.FILL,
 			textAlign : 'left',
-			top : 8,
+			top : 0,
+			bottom : 0,
 			color : '#666',
-			height : 30,
-			left : 100,
+			height : Ti.UI.SIZE,
+			left : 0,
+			right : 0,
 			font : {
 				fontSize : 22,
 				fontFamily : 'DroidSans-Bold'
@@ -32,21 +41,21 @@ Module = function(title, catalogtree, genderage) {
 		category.children.forEach(function(child) {
 			subs.push(child.name);
 		});
-		row.add(Ti.UI.createLabel({
+		box.add(Ti.UI.createLabel({
 			text : subs.join(', '),
 			color : '#444',
 			width : Ti.UI.FILL,
 			textAlign : 'left',
-			top : 30,
-			height : 70,
-			left : 100,
+			top : 0,
+			height : Ti.UI.SIZE,
+			left : 0,
 			font : {
-				fontSize : 12,
+				fontSize : 14,
 				fontFamily : 'DroidSans'
 			}
 		}));
 		var thumbnail = Ti.UI.createImageView({
-			image : 'https:' + category.thumbnail.replace('small1', 'large').replace('small2', 'large'),
+			image : 'https:' + category.thumbnail.replace('small2', 'small1'),
 			left : 0,
 			top : 0,
 			top : 2,
@@ -57,7 +66,7 @@ Module = function(title, catalogtree, genderage) {
 		});
 		row.add(thumbnail);
 		require('vendor/cachedimage')({
-			url : 'https:' + category.thumbnail.replace('small1', 'large').replace('small2', 'large'),
+			url : 'https:' + category.thumbnail.replace('small2', 'small1'),
 			view : thumbnail
 		});
 		rows.push(row);

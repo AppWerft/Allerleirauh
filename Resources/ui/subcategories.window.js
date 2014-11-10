@@ -28,7 +28,7 @@ Module = function(title, subcatalogtree, genderage) {
 			}
 		}));
 		var thumbnail = Ti.UI.createImageView({
-			image : 'https:' + subcategory.thumbnail.replace('small1', 'large'),
+			image : 'https:' + subcategory.thumbnail,
 			left : 0,
 			top : 5,
 			bottom : 5,

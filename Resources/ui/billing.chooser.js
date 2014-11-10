@@ -42,7 +42,8 @@ module.exports = function(_cb) {
 		data : rows
 	});
 	androidview.addEventListener('click', function(_e) {
-		_cb(_e.rowData.itemId);dialog.hide();
+		_cb(_e.rowData.itemId);
+		dialog.hide();
 	});
 	var dialog = Ti.UI.createOptionDialog({
 		androidView : androidview,

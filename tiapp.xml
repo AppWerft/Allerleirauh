@@ -61,6 +61,8 @@
         <module platform="android">yy.tidialogs</module>
         <module platform="iphone">dk.napp.social</module>
         <module platform="android">com.gbaldera.titouchgallery</module>
+        <module platform="iphone">ti.draggable</module>
+        <module platform="android">ti.draggable</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

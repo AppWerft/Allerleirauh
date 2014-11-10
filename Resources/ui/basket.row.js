@@ -2,7 +2,7 @@ function getRemover(product) {
 
 }
 
-module.exports = function(parent, item,ndx) {
+module.exports = function(parent, item, ndx) {
 	var self = Ti.UI.createTableViewRow({
 		hasChild : true,
 		backgroundColor : 'white',
@@ -62,11 +62,16 @@ module.exports = function(parent, item,ndx) {
 	});
 	var thumbnail = Ti.UI.createImageView({
 		image : 'https:' + item.images[0].replace('small2', 'large'),
-		left : 0,defaultImage : '/assets/fls.png',
+		left : 0,
+		defaultImage : '/assets/fls.png',
 		top : 5,
 		bottom : 5,
 		width : 120,
 		height : 150
+	});
+	require('vendor/cachedimage')({
+		url : 'https:' + item.images[0].replace('small2', 'large'),
+		view : thumbnail
 	});
 	mainview.add(thumbnail);
 	var variantes = require('ui/variants.widget')(item, function(_image) {

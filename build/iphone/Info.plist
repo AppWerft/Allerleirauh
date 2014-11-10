@@ -139,11 +139,6 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>/TheMixSemiBoldCaps.ttf</string>
-		<string>/TheSans-B7Bold.ttf</string>
-		<string>/TheSansBold.ttf</string>
-		<string>/TheSansSemiBold.ttf</string>
-		<string>/TheSansSemiBoldItalic.ttf</string>
 		<string>/fonts/DroidSans-Bold.ttf</string>
 		<string>/fonts/DroidSans.ttf</string>
 		<string>/fonts/SteelfishRG-Regular.ttf</string>

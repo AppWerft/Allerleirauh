@@ -8,7 +8,7 @@ module.exports = function(options) {
 	var depot = Ti.Filesystem.externalStorageDirectory;
 	var folder = Ti.Filesystem.getFile(depot, options.folder);
 	if (!folder.exists())
-		folders.createDirectory();
+		folder.createDirectory();
 	var file = Ti.Filesystem.getFile(depot, options.folder, Ti.Utils.md5HexDigest(options.url) + '.png');
 	if (file.exists() && options.view) {
 		options.view = file.nativePath;
@@ -31,7 +31,7 @@ module.exports = function(options) {
 			}
 		},
 		onerror : function() {
-			console.log('Warning: image caching unsuccessful ' + this.error);
+			console.log('Warning: image caching unsuccessful (timeout)' + this.error);
 		}
 	});
 	xhr.open('GET', options.url, true);

@@ -20,7 +20,7 @@ var getNextData = function(urlKey, callback) {
 
 Module = function(title, urlKey, genderage) {
 	var actionbar,
-	    menu,
+	    menu,spinner,
 	    brands = [];
 	var brandfilter = false;
 	var self = Ti.UI.createWindow({
@@ -30,7 +30,7 @@ Module = function(title, urlKey, genderage) {
 		orientationModes : [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT]
 	});
 	if (Ti.Android) {
-		var spinner = Ti.UI.createActivityIndicator({
+		spinner = Ti.UI.createActivityIndicator({
 			style : Ti.UI.ActivityIndicatorStyle.BIG,
 			height : Ti.UI.SIZE,
 			width : Ti.UI.SIZE
@@ -130,11 +130,12 @@ Module = function(title, urlKey, genderage) {
 					self.tab.open(win);
 			});
 		} else {
+			// more category:
 			var container = Ti.UI.createTableView();
 			self.add(container);
 			var rows = [];
 			Ti.Android && abx.setSubtitle(res.children.length + ' Kategorien');
-
+			spinner.hide();
 			res.children.forEach(function(subcategory) {
 				var row = Ti.UI.createTableViewRow({
 					hasChild : true,
@@ -157,7 +158,7 @@ Module = function(title, urlKey, genderage) {
 				}));
 				console.log(subcategory.thumbnail);
 				row.add(Ti.UI.createImageView({
-					image : 'https:' + subcategory.thumbnail.replace('small1', 'large'),
+					image : 'https:' + subcategory.thumbnail,
 					left : 0,
 					top : 5,defaultImage : '/assets/fls.png',
 					bottom : 5,
