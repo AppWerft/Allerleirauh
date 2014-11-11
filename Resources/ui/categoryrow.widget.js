@@ -1,4 +1,4 @@
-module.exports = function(item) {
+module.exports = function(item, genderage) {
 	var row = Ti.UI.createTableViewRow({
 		hasChild : true,
 		backgroundColor : 'white',
@@ -15,6 +15,7 @@ module.exports = function(item) {
 		left : 110,
 		font : {
 			fontSize : 22,
+			fontWeight : 'bold',
 			fontFamily : 'DroidSans'
 		}
 	}));
@@ -24,7 +25,7 @@ module.exports = function(item) {
 		top : 5,
 		defaultImage : '/assets/fls.png',
 		bottom : 5,
-		width : 90,
+		width : 80,
 		height : 100
 	}));
 	return row;

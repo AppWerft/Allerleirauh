@@ -1,4 +1,4 @@
-module.exports = function(minprice, maxprice, onslide) {
+module.exports = function(minprice, maxprice, onstop,onslide) {
 	var self = Ti.UI.createView({
 		top : 5,
 		height : 50
@@ -16,7 +16,7 @@ module.exports = function(minprice, maxprice, onslide) {
 		color : '#bbb',
 		width : Ti.UI.FILL,
 		textAlign : 'left',
-		top : 40,
+		top : 30,
 		left : 10,
 		font : {
 			fontSize : 12,
@@ -47,5 +47,7 @@ module.exports = function(minprice, maxprice, onslide) {
 	}));
 	self.add(slider);
 	slider.show();
-	return slider;
+	slider.addEventListener('stop',onstop);
+	slider.addEventListener('start',onslide);
+	return self;
 };

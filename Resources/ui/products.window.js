@@ -40,7 +40,47 @@ Module = function(title, urlKey, genderage) {
 		spinner.show();
 	}
 	getNextData(urlKey, function(res) {
-		if (res.products) {
+		if (res.products && res.products.length) {
+			var section = Ti.UI.createListSection({
+				headerTitle : null
+			});
+			var container = Ti.UI.createListView({
+				defaultItemTemplate : 'template',
+				templates : {
+					'template' : require('templates/products')
+				},
+				top : 50,
+				sections : [section]
+			});
+			function updateList(options) {
+				var dataitems = [];
+				res.products.forEach(function(product) {
+					if (product.price.replace('€ ', '').replace(',', '.') <= options.maxprice)
+						dataitems.push({
+							properties : {
+								itemId : JSON.stringify({
+									id : product.productNumber,
+									name : product.name
+								})
+							},
+							thumbnail : {
+								image : 'https:' + product.images[0]
+							},
+							title : {
+								text : product.name
+							},
+							brand : {
+								text : product.brand
+							},
+							price : {
+								text : product.price
+							}
+						});
+				});
+				actionbar && actionbar.setSubtitle(dataitems.length + ' Teile');
+				section.setItems(dataitems);
+			}
+
 			var maxprice,
 			    minprice;
 			res.products.sort(function(a, b) {
@@ -48,6 +88,7 @@ Module = function(title, urlKey, genderage) {
 				var bval = parseFloat(b.price.replace('€ ', '').replace(',', '.'));
 				return bval - aval;
 			});
+			console.log(res.products);
 			maxprice = parseFloat(res.products[0].price.replace('€ ', '').replace(',', '.'));
 			minprice = parseFloat(res.products[res.products.length - 1].price.replace('€ ', '').replace(',', '.'));
 			if (menu)
@@ -63,25 +104,26 @@ Module = function(title, urlKey, genderage) {
 			for (var brand in brandobj)
 			brands.push(brand);
 			brandobj = null;
-			var rows = [];
-			var slider = require('ui/priceslider.widget')(minprice, maxprice, function() {
+			var slider = require('ui/priceslider.widget')(minprice, maxprice, function(_e) {
+				container.opacity = 1;
+				updateList({
+					maxprice : _e.value
+				});
+			}, function() {
+				container.opacity = 0.6;
 			});
 			self.add(slider);
-			res.products.forEach(function(product) {
-				var row = require('ui/product.row')(product);
-				rows.push(row);
-			});
-			var container = Ti.UI.createTableView({
-				data : rows,
-				top : 60
+
+			updateList({
+				maxprice : maxprice
 			});
 			spinner && spinner.hide();
 			self.add(container);
-			container.addEventListener('click', function(_e) {
-				//console.log(_e.rowData);
+			container.addEventListener('itemclick', function(_e) {
+			     
 				var win = require('ui/product.window')({
-					id : _e.rowData.itemId,
-					name : _e.rowData.itemName
+					id : JSON.parse(_e.itemId).id,
+					name : JSON.parse(_e.itemId).name
 				});
 				if (Ti.Android)
 					win.open();
@@ -96,11 +138,10 @@ Module = function(title, urlKey, genderage) {
 			Ti.Android && abx.setSubtitle(res.children.length + ' Kategorien');
 			spinner.hide();
 			res.children.forEach(function(subcategory) {
-				var row = require('ui/categoryrow.widget')(subcategory);
+				var row = require('ui/categoryrow.widget')(subcategory, genderage);
 				rows.push(row);
 			});
 			container.setData(rows);
-
 			container.addEventListener('click', function(_e) {
 				var win = require('ui/products.window')(_e.row.titletext, _e.row.itemId, _e.row.genderage);
 				if (Ti.Android)
@@ -108,7 +149,6 @@ Module = function(title, urlKey, genderage) {
 				else
 					self.tab.open(win);
 			});
-
 		}
 	});
 	if (Ti.Android) {
