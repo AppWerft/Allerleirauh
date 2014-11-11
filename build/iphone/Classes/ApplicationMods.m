@@ -44,6 +44,20 @@
 			nil
 		]];
 		
+		[modules addObject:[NSDictionary
+			dictionaryWithObjectsAndKeys:@"draggable",
+			@"name",
+			@"ti.draggable",
+			@"moduleid",
+			@"1.3.1",
+			@"version",
+			@"e8c13998-8fa8-4cee-8078-353c27e84d19",
+			@"guid",
+			@"",
+			@"licensekey",
+			nil
+		]];
+		
 
 	return modules;
 }

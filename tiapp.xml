@@ -63,6 +63,7 @@
         <module platform="android">com.gbaldera.titouchgallery</module>
         <module platform="iphone">ti.draggable</module>
         <module platform="android">ti.draggable</module>
+        <module platform="android">de.manumaticx.crouton</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

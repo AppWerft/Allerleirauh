@@ -104,13 +104,24 @@ Module = function(title, urlKey, genderage) {
 			for (var brand in brandobj)
 			brands.push(brand);
 			brandobj = null;
-			var slider = require('ui/priceslider.widget')(minprice, maxprice, function(_e) {
-				container.opacity = 1;
-				updateList({
-					maxprice : _e.value
-				});
-			}, function() {
-				container.opacity = 0.6;
+			var preisbremse;
+			var slider = require('ui/priceslider.widget')(minprice, maxprice, {
+				onstop : function(_e) {
+					preisbremse = Math.round(_e.value);
+					container.opacity = 1;
+					updateList({
+						maxprice : preisbremse
+					});
+					require('de.manumaticx.crouton').info("Preisbremse ist jetzt € " + preisbremse);
+					setTimeout(function() {
+						slider.animate({
+							opacity : 1
+						});
+					}, 4000);
+				},
+				onstart : function() {
+					slider.opacity = 0;
+				}
 			});
 			self.add(slider);
 
@@ -120,7 +131,7 @@ Module = function(title, urlKey, genderage) {
 			spinner && spinner.hide();
 			self.add(container);
 			container.addEventListener('itemclick', function(_e) {
-			     
+
 				var win = require('ui/product.window')({
 					id : JSON.parse(_e.itemId).id,
 					name : JSON.parse(_e.itemId).name
